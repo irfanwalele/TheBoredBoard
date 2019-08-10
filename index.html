@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Bored Board</title>
+
+    <!-- This is the Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- This is the CSS file -->
+    <link rel="stylesheet" href="boredboard.css">
+
+    <!-- This is FireBase Stuff, just in case we decide to use it -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- This is a link for Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <!-- This is link for Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <!-- we will use this container for the whole page, follow the div! -->
+    <div class="container">
+
+        <!-- This is the fluid JumboTron -->
+        <div class="jumbotron jumbotron-fluid" id="thechalkboard">
+            <div class="container animated swing delay-1s" >
+           
+            <!-- This is the title, we need to center the words -->
+            <h1 class="display-4 animated swing delay-1s" id="centered">The BoReD BoaRD</h1>
+            <p class="lead" id="centered">What can you do with your life? Let's find out!</p>
+
+        </div>
+        </div>
+        
+        <!-- We will use a form here, for eventful, remember WHAT WHERE WHEN -->
+              <form>
+                <!-- This will be the what, aka q/keywords, this will be used to search by any aspect of an event that is not part of the category, location, or time -->
+                <div class="form-group">
+                    <label for="What">Tell us what kind of activity you might like</label>
+                    <input type="whatevent" class="form-control" id="what" placeholder="dancing, billiards, biking, etc">
+                </div>
+
+                  <!-- This is where the user will enter the zip code -->
+                <div class="form-group">
+                  <label for="Zip Code">Zip Code for your area</label>
+                  <input type="zipcode" class="form-control" id="where" placeholder="zip code, region, city">
+                  
+                  <!-- This will be a comment underneath the zip code entry box -->
+                  <small id="emailHelp" class="form-text text-muted">You should be excited!</small>
+                </div>
+
+
+
+                <!-- This is where the user will enter the radius -->
+                <div class="form-group">
+                    <label for="pwd">Radius</label>
+                    <select id="radius" class="custom-select" aria-labelledby="dropdownMenuButton">
+                        <!-- Setting the option for 1 as default, listing 1-10 miles -->
+                      <option selected value="1" selected>1</option> 
+                      <option value=2>2</option>
+                      <option value=3>3</option>  
+                      <option value=4>4</option>                     
+                      <option value=5>5</option>
+                      <option value=6>6</option>
+                      <option value=7>7</option>
+                      <option value=8>8</option>
+                      <option value=9>9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+
+
+                <!-- create if statement for when label is checked and submit button clicked then initiate bored API -->
+                <button type="submit" id= "button" class="btn btn-primary">Let's find something to do!</button>
+
+                <!-- <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Random To Do</a> -->
+                
+              </form>
+
+              <aside>
+                  <container>
+                    <!-- Results from Bored API will go here -->
+                    <div><button  id="boredAPI" class="btn btn-primary" type="submit">or.. Click me for a random activity</button></div>
+                    <div class="types"></div>
+                  </container>
+              </aside>
+              
+              
+              <section>
+                
+              </section>
+
+              
+              <!-- This card should hold the resulting events -->
+              <!-- <div class="card" >
+                  <ul class="list-group">
+                      <li class="list-group-item"></li>
+                     
+                    </ul>
+
+                
+              </div> -->
+
+              <!-- Lets try this new card in the javascript file -->
+              <!-- <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                   
+                  </div>
+                </div> -->
+              
+            
+
+
+
+              <!-- This is the footer -->
+              <div class="row">
+                  <div class="col-sm-12">
+
+                    <hr>
+                    <h6 class="text-center" id="footer">
+                    
+                    
+                    </h6>
+                    <h7><small>Created by the JIHM Team</small></h7>
+                  </div>
+              </div>
+              
+
+
+    </div>
+
+   <!-- jQuery JS -->
+   <script src="https://code.jquery.com/jquery.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+   <script src="boredboard.js"></script>
+    
+</body>
+</html>

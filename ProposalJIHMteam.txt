@@ -1,0 +1,5 @@
+Proposal
+
+Developing this app, we will attempt to use a culmination of techniques learned to deliver the user a unique experience to combat boredom. Using Bored API and EventBrite API, we will feed users possible activities and events to do when they’re bored.
+
+The use of the Bored API will allow the user to enter information about themselves, which will then generate an activity. Additionally, the user will also be able to search for an activity nearby, using their zip code and radius. That information will be used to pull activities that are near them, which will be displayed to the user. The user will then have the option to click on an activity that interests them which will direct them to the EventBrite website.
